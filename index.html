@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>luke shannon</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            /* hides any overflow */
+            font-family: cursive, sans-serif;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /* cursor: url('cursor.cur'), auto; */
+        }
+
+        a:link,
+        a:visited {
+            color: white;
+        }
+
+        /* Full-screen canvas behind all content
+        #p5-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* Keeps the p5.js canvas behind other elements 
+        } */
+
+        /* Style for all text bounding boxes */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        button {
+            /* border: 2px solid black; */
+            /* Black border */
+            background-color: none;
+            /* White background */
+            color: white;
+            /* Black text */
+            /* padding: 10px; */
+            /* display: inline-block; */
+            /* margin: 80px; */
+        }
+
+        p {
+            margin: 5px 5px 5px 15%;
+            /* margin-left: 20%; */
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        /* Separate sections */
+        .section {
+            margin: 50px 0 0 0;
+        }
+
+        .subsection {
+            margin: 0px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section">
+        <div class="subsection">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>(Website under renovation. Check out my <a href="https://www.are.na/luke-shannon/index">are.na</a>.)
+            </p>
+
+        </div>
+        <div>
+            <p>
+                © 2024 <a href="mailto:hi@lukeshannon.xyz">Luke Shannon</a>.
+            </p>
+        </div>
+        <script>
+            // Generate a random integer from 0 to 8
+            var randomNum = Math.floor(Math.random() * 9);
+            // Construct the filename using the random number
+            var imageFile = 'wow' + randomNum + '.png';
+            // Set the background image
+            document.body.style.backgroundImage = "url('" + imageFile + "')";
+        </script>
+</body>
+
+</html>
