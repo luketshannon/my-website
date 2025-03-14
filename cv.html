@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luke Shannon CV</title>
+    <link rel="icon" href="hitmarker.png" type="image/png">
+    <style>
+        html {
+            /* cursor: url('cursor.cur'), auto; */
+            scroll-behavior: smooth;
+            border: 1px solid black;
+            width: 90%;
+            max-width: 750px;
+            margin: 5% auto;
+            font-size: 16px;
+        }
+
+        body {
+            margin: 5%;
+        }
+
+        #links,
+        #bio,
+        #edu,
+        #solo,
+        #group,
+        #awards,
+        #talks,
+        #work,
+        #press {
+            margin-bottom: 2em;
+        }
+
+        .content {
+            /* margin: 1em; */
+            display: grid;
+            grid-template-columns: 2em 1fr;
+            gap: 1em;
+            margin: 0.25em;
+            /* border-bottom: 1px solid #EEE; */
+        }
+
+        #solo .content,
+        #group .content,
+        #awards .content,
+        #talks .content {
+            grid-template-columns:
+                2em
+                /* Date expands but remains consistent across rows */
+                1fr
+                /* Details take remaining space */
+                minmax(auto, 25%)
+                /* Host wraps if needed but has consistent width */
+                minmax(auto, 20%);
+
+            /* City wraps if needed but has consistent width */
+        }
+
+        #work .content {
+            grid-template-columns: 2em 1em 2em 2fr 1fr;
+        }
+
+        #press .content {
+            grid-template-columns: 2em 2fr 1fr;
+        }
+
+        .date {
+            text-align: right;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 600px) {
+            .content:not(:last-child) {
+                border-bottom: 1px solid #DDD;
+            }
+
+            .content {
+                /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+                gap: 0.5em;
+            }
+        }
+
+        .sticker {
+            position: relative;
+            /* So .sticker is positioned relative to this container */
+        }
+
+        .stick {
+            position: absolute;
+            /* Removes it from normal document flow */
+            top: -0.3em;
+            /* Adjust to position the sticker where you want it */
+            left: -40px;
+            pointer-events: none;
+            /* Don’t block clicks on underlying elements */
+            font-size: 1.5em;
+            border: 1px solid #000;
+            border-radius: 50%;
+            padding: 0.2em;
+            display: inline-block;
+            line-height: 1;
+        }
+
+        a:hover {
+            color: red;
+            /* border: 1px solid #00F; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="links">
+        <h2>Luke Shannon</h2>
+        <p style='font-family: cursive; margin:1em;'>...is seeking gold stars...</p>
+        <a href="https://lukeshannon.xyz">website↗</a>
+        <a href="https://are.na/luke-shannon">are.na↗</a>
+        <a href="mailto:hi@lukeshannon.xyz">email↗</a>
+        <a href="https://lukeshannon.xyz/cv.html">cv↗</a>
+        <!-- <a href="https://www.instagram.com/_lukeshannon/">instagram↗</a> -->
+        <!-- <a href="https://x.com/luke_shannon_">twitter↗</a> -->
+    </div>
+
+    <div id="bio">
+        <hr>
+        <h2>Bio</h2>
+        <div class="content">
+            <div class="date"></div>
+            <div class="deets">
+                Luke Shannon (b. 2000) is a contemporary artist using code and art machines, examining selfhood in
+                systems. He is currently a Steve Jobs Archive Fellow in NYC,
+                and has exhibited or performed
+                internationally with ARTXCODE (NYC), The Digital (Art
+                Basel Miami), Tonic (SF, NYC), Proof+Pace Gallery (London), Bright Moments (LA, CDMX, Paris, Venice,
+                Berlin), Art Blocks (Marfa, TX), Princeton University (NJ), and Dia Beacon (NY). Luke is online at
+                <a target="_blank" href="https://lukeshannon.xyz">lukeshannon.xyz</a>.<!--➶-->
+            </div>
+        </div>
+    </div>
+
+    <div id="solo">
+        <hr>
+        <h2>Solo Exhibitions</h2>
+        <div class='content'>
+            <div class='date sticker'><span class='stick' style="--hue: 210;">🖨️</span>2024</div>
+            <div class='deets'><a href="https://www.are.na/luke-shannon/plotter-scanner">���</a>
+            </div>
+            <div class='host'><a
+                    href="https://arts.princeton.edu/events/exhibition-by-petr-karpov-luke-shannon/2024-04-02/">Princeton
+                    Lucas Gallery</a></div>
+            <div class='city'>NJ</div>
+        </div>
+        <div class='content'>
+            <!-- Seating Arrangements, original date: Nov 2023 -->
+            <div class='date'>2023</div>
+            <div class='deets'><a target="_blank"
+                    href="https://www.are.na/luke-shannon/seating-arrangements-vbrzrpscnzo">Seating
+                    Arrangements</a></div>
+            <div class='host sticker'><span class='stick' style="--hue: 30;">🪑</span><a target="_blank"
+                    href="https://tonic.xyz/series/seating-arrangements/">Tonic</a>
+            </div>
+            <div class='city'>NYC, SF</div>
+        </div>
+        <div class='content'>
+            <!-- Apr 4 - 28, 23 -->
+            <div class='date'></div>
+            <div class='deets'><a href="https://www.artblocks.io/collection/lightbreak-by-luke-shannon">Lightbreak</a>
+            </div>
+            <div class='host'>Princeton Butler Gallery</div>
+            <div class='city'>NJ</div>
+        </div>
+        <div class='content'>
+            <!-- Orchids, original date: Oct 2022 -->
+            <div class='date'>2022</div>
+            <div class='deets'><a href="https://www.artblocks.io/collection/orchids-by-luke-shannon">Orchids</a></div>
+            <div class='host'><a href="https://www.brightmoments.io">Bright Moments</a></div>
+            <div class='city'>NYC, LA, CDMX, LND, BER</div>
+        </div>
+        <div class='content'>
+            <!-- Sep 2, 22 -->
+            <div class='date'></div>
+            <div class='deets'></span><a href="https://www.are.na/luke-shannon/ceramics-w5pus5zfips">Vertebrae</a></div>
+            <div class='host'><a href="https://artblocks.io" target="_blank">Art Blocks</a></div>
+            <div class='city'>Marfa, TX</div>
+        </div>
+        <div class='content'>
+            <!-- Apr-May, 22 -->
+            <div class='date'></div>
+            <div class='deets'><a href="https://www.are.na/luke-shannon/nllp_qlln-studios">nllp_qlln studios</a></div>
+            <div class='host'>33 Witherspoon</div>
+            <div class='city'>NJ</div>
+        </div>
+    </div>
+
+    <div id="group">
+        <hr>
+        <h2>Group Exhibitions + Screenings + Performances</h2>
+        <div class='content'>
+            <!-- Dec 14 2024 -->
+            <div class='date'>2024</div>
+            <div class='deets'><a href="https://rhizome.org/events/super-ultimate-internet-day/">Rhizome Super Ultimate
+                    Internet Day</a></div>
+            <div class='host'><a href="https://rhizome.org">Rhizome</a>, <a href="https://442broadway.love">HEART</a>
+            </div>
+            <div class='city'>NYC</div>
+        </div>
+        <div class='content'>
+            <!-- DEC 2024 -->
+            <div class='date'></div>
+            <div class='deets'><a href="https://scope-art.com/show/">SCOPE Miami</a></div>
+            <div class='host'><a href="https://artxcode.io">ARTXCODE Booth</a></div>
+            <div class='city'>MIA</div>
+        </div>
+        <div class='content'>
+            <!-- Fall 2024 -->
+            <div class='date'></div>
+            <div class='deets'><a
+                    href="https://www.diaart.org/program/past-programs/momentum-performance-10252024">MOMENTUM:
+                    synthesize.r</a>
+            </div>
+            <div class='host'><a
+                    href="https://www.diaart.org/visit/visit-our-locations-sites/dia-beacon-beacon-united-states">Dia
+                    Beacon</a></div>
+            <div class='city'>NY</div>
+        </div>
+        <div class='content'>
+            <!-- Aug 1 2024 -->
+            <div class='date'></div>
+            <div class='deets'><a href="https://mayaman.substack.com/p/youre-invited-sacred-screenshots">Sacred
+                    Screenshots</a></div>
+            <div class='host sticker'><span class="stick" style="--hue: 330;">❤️</span><a
+                    href="https://442broadway.love">HEART</a></div>
+            <div class='city'>NYC</div>
+        </div>
+        <div class='content'>
+            <!-- FALL 2024 -->
+            <div class='date'></div>
+            <div class='deets'>Stitchables x Marfa Museum Thrift Store</div>
+            <div class='host'><a href="https://artblocks.io" target="_blank">Art Blocks</a></div>
+            <div class='city'>Marfa, TX</div>
+        </div>
+        <div class='content'>
+            <div class='date'></div>
+            <div class='deets'><a href="https://arts.princeton.edu/events/exhibition-exceed-your-vision/">Exceed Your
+                    Vision</a> + <a
+                    href="https://arts.princeton.edu/news/2024/10/lewis-center-for-the-arts-hosts-symposium-focused-on-photography-in-a-transformed-world/">Symposium</a>
+            </div>
+            <div class='host'>Princeton University</div>
+            <div class='city'>NJ</div>
+        </div>
+        <div class='content'>
+            <div class='date'></div>
+            <div class='deets'><a
+                    href="https://www.linkedin.com/posts/art-blocks-inc_art-blocks-engine-at-sxsw-2024-activity-7180588633622466560-kiCv">SXSW
+                    Booth</a></div>
+            <div class='host'><a href=" https://www.artblocks.io">Art Blocks</a></div>
+            <div class='city'>Austin</div>
+        </div>
+        <div class='content'>
+            <div class='date'></div>
+            <div class='deets'><a href="https://www.brightmoments.io/venezia">Bright Moments Venezia</a></div>
+            <div class='host'><a href="https://www.brightmoments.io">Bright Moments</a></div>
+            <div class='city'>Venice</div>
+        </div>
+        <div class='content'>
+            <div class='date'></div>
+            <div class='deets'>Anifilm 2023</div>
+            <div class='host'><a href="https://www.anifilm.cz/en">Anifilm</a></div>
+            <div class='city'>Czech Republic</div>
+        </div>
+        <div class='content'>
+            <div class='date'></div>
+            <div class='deets'><a href="https://www.puntoyrayafestival.com/tv/streaming/779">Best of Punto y Raya
+                    2023</a>
+            </div>
+            <div class='host'><a href="https://www.puntoyrayafestival.com">Punto y Raya</a></div>
+            <div class='city'>Annecy, NYC, Lisbon</div>
+        </div>
+        <div class='content'>
+            <div class='date'></div>
+            <div class='deets'><a href="https://www.brightmoments.io/paris">Bright Moments Paris</a></div>
+            <div class='host'><a href="https://www.brightmoments.io">Bright Moments</a></div>
+            <div class='city'>Paris</div>
+        </div>
+        <div class='content'>
+            <!-- Oct 21, 23 -->
+            <div class='date'>2023</div>
+            <div class='deets'><a href="https://www.proof.xyz/exhibitions/notes-from-a-neutron-star/my-first-plot">My
+                    First Plot</a></div>
+            <div class='host'>Pace Gallery, <a href="https://proof.xyz">Proof</a></div>
+            <div class='city'>London</div>
+        </div>
+        <div class='content'>
+            <!-- Oct 11-15, 23 -->
+            <div class='date'></div>
+            <div class='deets'><a href="https://www.puntoyrayafestival.com/fest/editions/2023">Punto y Raya 2023</a>
+            </div>
+            <div class='host'><a href="https://www.puntoyrayafestival.com">Punto y Raya</a></div>
+            <div class='city'>Lisbon</div>
+        </div>
+        <div class='content'>
+            <!-- Sep 22, 23 -->
+            <div class='date'></div>
+            <div class='deets'>Stitchables Event</div>
+            <div class='host'><a href="https://artblocks.io" target="_blank">Art Blocks</a></div>
+            <div class='city'>Marfa, TX</div>
+        </div>
+        <div class='content'>
+            <!-- Sep 22, 23 -->
+            <div class='date'></div>
+            <div class='deets'>TEFF 2023</div>
+            <div class='host'><a href="https://www.tefilmfest.org/">Thomas Edison Film Festival</a></div>
+            <div class='city'>NJ</div>
+        </div>
+        <div class='content'>
+            <!-- Apr-May, 22 -->
+            <div class='date'></div>
+            <div class='deets'><a>Ramona Jade DJ &amp; VJ</a></div>
+            <div class='host'>33 Witherspoon</div>
+            <div class='city'>NJ</div>
+        </div>
+        <div class='content'>
+            <!-- pattern.dst, original date: Jun 2023 -->
+            <div class='date'></div>
+            <div class='deets sticker'><span class="stick" style="--hue: 260;">🕴🏻</span><a
+                    href="https://www.christies.com/auction/auction-22798-nyr">Future Frequencies</a></div>
+            <div class='host'><a href="https://www.christies.com">Christie's</a>, <a href="https://gucci.com">Gucci</a>
+            </div>
+            <div class='city'>NYC</div>
+        </div>
+        <div class='content'>
+            <!-- Apr 14, 23 -->
+            <div class='date'></div>
+            <div class='deets'>Lars &amp; Luke (duo show)</div>
+            <div class='host'><a href="https://artxcode.io">ARTXCODE</a></div>
+            <div class='city'>NYC</div>
+        </div>
+        <div class='content'>
+            <!-- Apr 12 - 21, 23 -->
+            <div class='date'></div>
+            <div class='deets'>This Show Is Organized By Numbers</div>
+            <div class='host'>Princeton Lucas Gallery</div>
+            <div class='city'>NJ</div>
+        </div>
+        <div class='content'>
+            <!-- Mar 9, 23 -->
+            <div class='deets'></div>
+            <div class='deets'><a href="https://theseaport.nyc/events/on-water-2023/">On Water</a></div>
+            <div class='host'><a href="https://theseaport.nyc/explore/%25dircat%25/3fivetwo-gallery/">3fivetwo</a>
+            </div>
+            <div class='city'>NYC</div>
+        </div>
+        <div class='content'>
+            <!-- Feb 28 - Mar 13, 23 -->
+            <div class='date'></div>
+            <div class='deets'>Book &amp; Poster Show</div>
+            <div class='host'>Princeton Hagan Gallery</div>
+            <div class='city'>NJ</div>
+        </div>
+        <div class='content'>
+            <!-- Jan - Apr, 23 -->
+            <div class='date'></div>
+            <div class='deets'>Nature</div>
+            <div class='host'>Princeton Guggenheim Gallery</div>
+            <div class='city'>NJ</div>
+        </div>
+        <div class='content'>
+            <!-- Dec, 22 -->
+            <div class='date'>2022</div>
+            <div class='deets'><a href="https://www.artblocks.io/collection/orchids-by-luke-shannon">Orchids</a></div>
+            <div class='host'><a href="https://www.accelerateart.org">Accelerate Art</a></div>
+            <div class='city'>Art Basel Miami</div>
+        </div>
+        <div class='content'>
+            <!-- Winter 22 -->
+            <div class='date'></div>
+            <div class='deets'><a href="https://www.artblocks.io/collection/orchids-by-luke-shannon">Orchids</a>, Haikus
+            </div>
+            <div class='host'><a href="https://www.nasslit.com">Nassau Literary Review</a></div>
+            <div class='city'>NJ</div>
+        </div>
+        <div class='content'>
+            <!-- Jun 26, 22 -->
+            <div class='date'></div>
+            <div class='deets'>Earthbound Symbiosis</div>
+            <div class='host'>Blue Gallery</div>
+            <div class='city'>NYC</div>
+        </div>
+        <div class='content'>
+            <!-- Jun 21-26, 22 -->
+            <div class='date'></div>
+            <div class='deets'>Past Is Prologue</div>
+            <div class='host'><a href="https://www.accelerateart.org">Accelerate Art</a></div>
+            <div class='city'>NYC</div>
+        </div>
+        <div class='content'>
+            <!-- Jun 21, 22 -->
+            <div class='date'></div>
+            <div class='deets'><a href="https://www.artblocks.io/collection/the-opera-by-luke-shannon">The Opera</a>
+            </div>
+            <div class='host'><a href="https://artblocks.io" target="_blank">Art Blocks</a>, Samsung</div>
+            <div class='city'>NYC</div>
+        </div>
+        <div class='content'>
+            <!-- May, 22 -->
+            <div class='date'>2021</div>
+            <div class='deets'>FACES</div>
+            <div class='host'>NYU ITP</div>
+            <div class='city'>NYC</div>
+        </div>
+        <div class='content'>
+            <!-- Dec 21, 21 -->
+            <div class='date'></div>
+            <div class='deets'><a href="https://www.artblocks.io/collection/the-opera-by-luke-shannon">The Opera</a>
+            </div>
+            <div class='host'>The Digital</div>
+            <div class='city'>Art Basel Miami</div>
+        </div>
+    </div>
+
+    <div id="edu">
+        <hr>
+        <h2>Education</h2>
+        <div class="content">
+            <div class="date">2024</div>
+            <div class="deets">
+                <strong>Bachelor of Science</strong><br>
+                Princeton University<br>
+                BSE Computer Science and Visual Arts, High Honors<br>
+                Phi Beta Kappa, Tau Beta Pi, Sigma Xi<br>
+                <em>"Video Transformations and Generative Art in a
+                    ZK-proof for Nuclear Disarmament"</em>
+            </div>
+        </div>
+    </div>
+
+    <div id="awards">
+        <hr>
+        <h2>Residencies + Awards</h2>
+
+        <div class='content'>
+            <div class='date'>2025</div>
+            <div class='deets'>Steve Jobs Fellow</div>
+            <div class='host sticker'><span class="stick" style="--hue: 0;">🍎</span><a
+                    href="https://stevejobsarchive.com">Steve Jobs Archive</a></div>
+            <div class='city'>NYC</div>
+        </div>
+        <div class='content'>
+            <div class='date'>2024</div>
+            <div class='deets'>Lucas Award for Visual Art</div>
+            <div class='host'>Princeton University</div>
+            <div class='city'>NJ</div>
+        </div>
+        <div class='content'>
+            <!-- August - September -->
+            <div class='date'>2022</div>
+            <div class='deets'>Artist Resident</div>
+            <div class='host'><a href="https://artblocks.io" target="_blank">Art Blocks</a></div>
+            <div class='city'>Marfa, TX</div>
+            <!-- <div class='info'>Month long residency in Marfa creating ceramics with code and 3D printing, culminating in
+                a gallery
+                show</div> -->
+        </div>
+        <div class='content'>
+            <!-- June - July -->
+            <div class='date'>2022</div>
+            <div class='deets'>Researcher and Resident</div>
+            <div class='host'>Princeton Council of Science and Technology</div>
+            <div class='city'>NJ</div>
+            <!-- pursued embroidery, plotting, and 3d printing projects in the StudioLab and designed new ways to use
+                StudioLab to create algorithmic art -->
+        </div>
+    </div>
+
+    <div id="talks">
+        <hr>
+        <h2>Lectures + Workshops</h2>
+        <div class='content'>
+            <!-- Oct 2023 -->
+            <div class='date'>2025</div>
+            <div class='deets'>Enzo Mari and Seating Arrangements</div>
+            <div class='host'><a href="https://r-e-s-e-a-r-c-h.org/about">r-e-s-e-a-r-c-h</a></div>
+            <div class='city'>NJ</div>
+        </div>
+        <div class='content'>
+            <!-- Oct 2023 -->
+            <div class='date'></div>
+            <div class='deets'>Panel with Now Media</div>
+            <div class='host'><a href="https://aspreystudio.com/">Asprey Studio's Gallery</a></div>
+            <div class='city'>London</div>
+        </div>
+        <div class='content'>
+            <!-- Oct 2023 -->
+            <div class='date'>2024</div>
+            <div class='deets'>On Generative Art</div>
+            <div class='host'><a href="https://cst.princeton.edu/syllabus-stc-209">Transformations in Engineering
+                    and the
+                    Arts</a>
+            </div>
+            <div class='city'>NJ</div>
+        </div>
+        <div class='content'>
+            <div class='date'></div>
+            <div class='deets'>TEFF Screening + Panel Q&amp;A</div>
+            <div class='host'><a href="https://www.tefilmfest.org/">Thomas Edison Film Festival</a></div>
+            <div class='city'>NJ</div>
+        </div>
+        <div class='content'>
+            <!-- Oct 2023 -->
+            <div class='date'></div>
+            <div class='deets'>On Generative Art</div>
+            <div class='host'><a
+                    href="https://frs.princeton.edu/courses/creating-audio-visual-generative-art-digital-medium">Audio-Visual
+                    Generative Art in the Digital Medium</a>
+            </div>
+            <div class='city'>NJ</div>
+        </div>
+        <div class='content'>
+            <div class='date'></div>
+            <div class='deets'>Marty, Rudxane, Luke</div>
+            <div class='host'><a href="https://www.brightmoments.io">Bright Moments</a></div>
+            <div class='city'>Paris</div>
+        </div>
+        <div class='content'>
+            <div class='date'></div>
+            <div class='deets'>Paris Preview</div>
+            <div class='host'><a href="https://www.brightmoments.io">Bright Moments</a></div>
+            <div class='city'>NYC</div>
+        </div>
+        <div class='content'>
+            <!-- Oct 2023 -->
+            <div class='date'>2023</div>
+            <div class='deets'>On NFTs</div>
+            <div class='host'>Electrical Engineering Dept
+            </div>
+            <div class='city'>NJ</div>
+        </div>
+        <div class='content'>
+            <!-- Oct 2023 -->
+            <div class='date'></div>
+            <div class='deets'>Digital Fashion Residency Mentor</div>
+            <div class='host'>Vertical</div>
+            <div class='city'>Remote</div>
+        </div>
+        <div class='content'>
+            <!-- Sep 2023 -->
+            <div class='date'></div>
+            <div class='deets'>Generative Embroidery Workshop</div>
+            <div class='host'>TokenArt</div>
+            <div class='city'>NYC</div>
+        </div>
+        <div class='content'>
+            <!-- November 3, 2022 -->
+            <div class='date'>2022</div>
+            <div class='deets'>Introduction to Generative Art</div>
+            <div class='host'>Princeton Council of Science and Technology</div>
+            <div class='city'>NJ</div>
+        </div>
+
+        <div class='content'>
+            <!-- fall 2022 -->
+            <div class='date'></div>
+            <div class='deets'>Conditional Drawing</div>
+            <div class='host'>Assisting Zach Lieberman and Casey Reas</div>
+            <div class='city'>CDMX</div>
+        </div>
+        <div class='content'>
+            <!-- sep 2022 -->
+            <div class='date'></div>
+            <div class='deets'>Generative Making Workshop</div>
+            <div class='host'>TokenArt</div>
+            <div class='city'>NYC</div>
+        </div>
+    </div>
+
+    <div id="work">
+        <hr>
+        <h2>Work</h2>
+        <!-- Work section reformatted into a table with Start Date, End Date, Location, and Role/Title &amp; Details -->
+        <div class='content'>
+            <div class='date'>2022</div>
+            <div>⟶</div>
+            <div>now</div>
+            <div class='deets'><strong>ARTXCODE Artist</strong><br>
+                <em>Represented by ARTXCODE.</em>
+            </div>
+            <div class='host'><a href="https://artxcode.io">ARTXCODE</a></div>
+        </div>
+        <div class='content'>
+            <div class='date'>2025</div>
+            <div>⟶</div>
+            <div>now</div>
+            <div class='deets'><strong>O-R-G-anizer</strong><br>
+                <em>Organizing papers at O-R-G and serving drafts at The Serving Library.</em>
+            </div>
+            <div class='host'><a href="https://o-r-g.com">O-R-G</a>, <a target="_blank"
+                    href="https://servinglibrary.org">The Serving Library</a>, <a target="_blank"
+                    href="https://dextersinister.org">Dexter Sinister</a></div>
+        </div>
+        <div class='content'>
+            <div class='date'>2022</div>
+            <div>⟶</div>
+            <div>2023</div>
+            <div class='deets'><strong>Research and Development</strong><br>
+                <em>Skunkworks investigations into new methods of creating physical
+                    algorithmic art, especially embroidery and 3D printing.</em>
+            </div>
+            <div class='host'><a href="https://artblocks.io" target="_blank">Art
+                    Blocks</a></div>
+        </div>
+        <div class='content'>
+            <div class='date'>2020</div>
+            <div>⟶</div>
+            <div>2021</div>
+            <div class='deets'>
+                <strong>Data Analysis Fellow<br>
+                    Data Vendor</strong><br>
+                <em>End to end data pipelines for 1M+ voters.<br>
+                    Voter tooling for finding nearest polling locations.<br>
+                    Voter and campaign data analysis for leadership decisions.</em>
+            </div>
+            <div class='host'><a href="https://nvdems.com/">DNC</a></div>
+        </div>
+    </div>
+
+    <div id="press">
+        <hr>
+        <h2>Press</h2>
+        <div class='content'>
+            <div class='date'>2024</div>
+            <div class='deets'><a href="https://vetroeditions.com/products/tracing-the-line">Book:
+                    Tracing the
+                    Line</a></div>
+            <div class="host">Vetro Editions</div>
+        </div>
+        <div class='content'>
+            <div class='date'>
+            </div>
+            <div class='deets'><a href="https://www.brightmoments.io/quarterly/luke-shannon">Issue:
+                    Luke
+                    Shannon - Lightbreak</a></div>
+            <div class="host">Bright Moments Quarterly</div>
+        </div>
+        <div class='content'>
+            <div class='date'></div>
+            <div class='deets'><a href="https://www.youtube.com/watch?v=Hgp7kPXvE4g">Video: Meet
+                    Luke
+                    Shannon,
+                    Bright Moments Paris Collection</a></div>
+            <div class="host">Bright Moments</div>
+        </div>
+        <div class='content'>
+            <!-- Nov 15, 2023 -->
+            <div class='date'>2023</div>
+            <div class='deets'><a target="_blank"
+                    href="https://open.spotify.com/episode/71nnuk7HVfmW2oydfXYnln?si=902df721416d4c13">
+                    Interview: Waiting to Sit with Luke Shannon</a></div>
+            <div class="host">Waiting To Be Signed</div>
+        </div>
+        <div class='content'>
+            <div class='date'></div>
+            <div class='deets'><a target="_blank"
+                    href="https://www.rightclicksave.com/article/what-is-the-future-of-generative-media-interview-claire-silver-maya-man-luke-shannon-christies-gucci">Interview:
+                    Future
+                    of Generative Media (Claire Silver, Maya Man, Luke Shannon)</a></div>
+            <div class="host">Right Click Save</div>
+        </div>
+        <div class='content'>
+            <div class='date'></div>
+            <div class='deets'><a target="_blank"
+                    href="https://open.spotify.com/episode/62kGcELsaZ2TG3p3PayS9t?si=2b6c169b049c436e">Interview:
+                    Notes from a Neutron Star</a></div>
+            <div class="host">Vaulted by Proof</div>
+        </div>
+        <div class='content'>
+            <div class='date'></div>
+            <div class='deets'><a href="https://www.artxcode.io/artists/luke-shannon">Interview:
+                    Luke Shannon</a></div>
+            <div class="host">ARTXCODE</div>
+        </div>
+        <div class='content'>
+            <!-- aug 18, 2023 -->
+            <div class='date'></div>
+            <div class='deets'><a target="_blank"
+                    href="https://open.spotify.com/episode/46ejFKQTYmrixkyc50jD50?si=6af8ddeaef1d491f">Interview:
+                    Luke
+                    Shannon and
+                    Lars Wander</a>
+            </div>
+            <div class="host">Provenance Podcast</div>
+        </div>
+        <div class='content'>
+            <div class='date'></div>
+            <div class='deets'><a target="_blank"
+                    href="https://hypebae.com/2023/7/christies-gucci-nft-digital-art-fashion-auction-dani-loftus-draup-luke-shannon-generative-art">Feature:
+                    Christie's,
+                    Gucci NFT Auction</a></div>
+            <div class="host">Hypebae</div>
+        </div>
+        <div class='content'>
+            <div class='date'></div>
+            <div class='deets'><a target="_blank"
+                    href="https://www.voguebusiness.com/technology/gucci-is-rewarding-nft-holders-with-physical-pieces">Feature:
+                    Gucci
+                    Rewards NFT Holders</a></div>
+            <div class="host">Vogue Business</div>
+        </div>
+        <div class='content'>
+            <div class='date'>2022</div>
+            <div class='deets'><a target="_blank"
+                    href="https://open.spotify.com/episode/6Iq78TkjyR0aKgjQAjlKOf?si=3d46f2cb43fc4b2d">Interview:
+                    Luke
+                    Shannon, Fahad Karim, numbersinmotion</a></div>
+            <div class="host">Minters and Makers, Art Blocks</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Function to return a pastel color for a given hue
+            function getPastelColor(hue) {
+                return `hsl(${hue}, 100%, 95%)`;
+            }
+
+            // Function to generate a random pastel color
+            function getRandomPastelColor() {
+                const hue = Math.floor(Math.random() * 360);
+                return getPastelColor(hue);
+            }
+
+            function styleSticker(sticker) {
+                // Random angle from -45 to +45 degrees
+                const randomAngle = Math.floor(Math.random() * 91) - 45;
+                sticker.style.transform = `rotate(${randomAngle}deg)`;
+
+                // Check for a custom hue specified in inline CSS (using the CSS custom property --hue)
+                let customHue = sticker.style.getPropertyValue('--hue').trim();
+                if (customHue && !isNaN(customHue)) {
+                    sticker.style.backgroundColor = getPastelColor(customHue);
+                } else {
+                    sticker.style.backgroundColor = getRandomPastelColor();
+                }
+            }
+
+            // Style any existing stickers
+            document.querySelectorAll('.stick').forEach((sticker) => {
+                styleSticker(sticker);
+            });
+
+            // On click, add a new sticker with a star
+            document.body.addEventListener('click', (event) => {
+                const newSticker = document.createElement('span');
+                newSticker.classList.add('stick');
+                newSticker.textContent = '⭐';
+                newSticker.style.position = 'absolute';
+                newSticker.style.pointerEvents = 'none';
+                newSticker.style.left = (event.pageX - 15) + 'px';
+                newSticker.style.top = (event.pageY - 15) + 'px';
+
+                // If you want to specify a custom hue inline, add it like this:
+                // newSticker.style.setProperty('--hue', '200');
+
+                styleSticker(newSticker);
+                document.body.appendChild(newSticker);
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('a').forEach(function (link) {
+                link.setAttribute('target', '_blank');
+            });
+        });
+    </script>
+</body>
+
+</html>

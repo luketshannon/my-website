@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>luke's wips</title>
+    <style type="text/css">
+        body {
+            cursor: url('cursor.cur'), auto;
+        }
+    </style>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            /* background-color: white; */
+            font-family: cursive;
+            color: black;
+            word-wrap: break-word;
+        }
+
+        /* Wrapper for the two panels */
+        .dual-layout {
+            display: block;
+            width: 100%;
+        }
+
+        /* Panels */
+        #left-panel,
+        #right-panel {
+            box-sizing: border-box;
+            padding: 5%;
+        }
+
+        /* .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            justify-content: flex-start;
+
+            padding: 5%;
+            width: 100%;
+            box-sizing: border-box;
+        } */
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+            /* Center vertically */
+            width: 100%;
+            padding: 20px 0;
+        }
+
+        .container {
+            background-color: white;
+            width: 100%;
+            max-width: 800px;
+            /* Limit width for larger screens */
+            margin: 80px auto;
+            /* Center horizontally */
+            text-align: center;
+            /* Center text inside */
+            box-sizing: border-box;
+            padding: 2%;
+            /* Add padding */
+            border: 1px solid black;
+        }
+
+        img {
+            max-width: 500px;
+            max-height: 500px;
+            width: auto;
+            height: auto;
+        }
+
+        /* On larger screens, split into two columns */
+        /* @media (min-width: 1px) {
+            .dual-layout {
+                display: flex;
+            }
+
+            #left-panel,
+            #right-panel {
+                width: 50%;
+                height: 100vh;
+                /* Full viewport height 
+                overflow-y: auto;
+                /* Scroll independently 
+                position: relative;
+            }
+        } */
+
+        /* Smaller screens, stack normally */
+        @media (max-width: 99999999999999999px) {
+
+            #left-panel,
+            #right-panel {
+                width: 100%;
+                height: auto;
+                overflow: visible;
+            }
+        }
+
+
+        .content {
+            margin-top: 20px;
+            text-align: left;
+            padding: 0px 20px 20px 20px;
+        }
+
+        .font1 {
+            font-family: cursive;
+        }
+
+        .font2 {
+            font-family: 'Courier New', Courier, monospace
+        }
+
+        /* Full-screen canvas behind all content */
+        #p5-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* Keeps the p5.js canvas behind other elements */
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="carousel.css">
+
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="sketch.js"></script>
+    <script src="carousel.js"></script>
+
+    <div id="p5-container"></div> <!-- Placeholder for the p5.js sketch -->
+
+    <div class="dual-layout">
+        <div id="left-panel">
+            <div class="container">
+                <h1 class="font1">Luke's WIPs</h1>
+                <p id="prepared-for"></p>
+                <script>
+                    const param = new URLSearchParams(window.location.search).get('to');
+                    const at = new URLSearchParams(window.location.search).get('at');
+                    const date = at || "January"
+                    const p = document.getElementById('prepared-for');
+                    if (param) {
+                        p.textContent = `Prepared for ${param}, ${date} 2025`;
+                    } else {
+                        p.remove();
+                    }
+                </script>
+                <nav hidden=true id="nav">
+                    <ol align="left">
+                        <li><a href="#haikus">Haikus</a></li>
+                        <li><a href="#plotter-scanner">plotter-scanner</a></li>
+                        <li><a href="#ceramics">Marfa Ceramics Prototypes</a></li>
+                        <li><a href="#youtube-thumbnails">YouTube Thumbnails</a></li>
+                        <li><a href="#commission">Commissions</a></li>
+                    </ol>
+                </nav>
+            </div>
+            <!-- <p>&emsp;Proprietary and confidential. © Luke Shannon 2024</p> -->
+        </div>
+        <div id="right-panel">
+            <div hidden=true id="haikus" class="container">
+                <div class="content ">
+                    <h2 class="font1">Haikus!</h2>
+                    <div class=" font2">
+                        <p>Some numbers, when spoken aloud in English,
+                            are
+                            naturally haikus. The smallest such number is:</p>
+                        <div class="font1" align="center">127177</div>
+                        <p> or</p>
+                        <div class="font1" align="center">one hundred twenty / <br> seven thousand one hundred / <br>
+                            seventy
+                            seven</div>
+                        <p>There is a finite but very full sequence of these numbers. The last one is</p>
+                        <div class="font1" align="center">
+                            999000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000099000000000012
+                        </div>
+                        or
+                        <div class="font1" align="center">nine hundred ninety / <br> nine centillion ninety / <br> nine
+                            trillion twelve
+                        </div>
+                        <p>It is a nontrivial algorithm to find all of the numbers which are haikus, because they cannot
+                            be
+                            found through guess and check, but rather
+                            <em>constructed</em> via algorithm. I believe I
+                            have found all of them. Here is an interactive page which shows all of the haikus under
+                            about 16
+                            million on a <a target="_blank" href="https://en.wikipedia.org/wiki/Hilbert_curve">Hilbert
+                                curve[↗]</a>:
+                        </p>
+                        <div
+                            style="width: 100%; max-width: 100%; margin: 0 auto; position: relative; padding-top: 100%; overflow: hidden;">
+                            <iframe src="https://haikus.netlify.app"
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
+                        </div>
+                        <p><a href="https://haikus.netlify.app">fullscreen link[↗]</a></p>
+
+                        <p>These three works above (the smallest haiku, largest haiku, and haikus under 16M) are the
+                            beginning
+                            of a series of works around these haikus. I have plans for more works: haikus which are RGB
+                            colors,
+                            a one-year-long audio performance of the haikus being spoken out loud, simple .txt files of
+                            all
+                            of
+                            the haikus--and finally a physical sculpture in which you can trace all 120M haikus, imbued
+                            in a single object.</p>
+
+                        <div align="center">
+
+                            <audio controls>
+                                <source src="haikus.mp4" type="audio/mp4">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+
+                        <p>I am drawn to the haikus because they are both</p>
+                        <p class="">...something that already existed, out in the world, that my process has not made
+                            but only given name to. In this sense they are discovered and not created, and this is an
+                            objective,
+                            rigorous process to find them as they already exist.</p>
+                        <p class="">...something that is entirely dependent on convention and circumstance. It's
+                            arbitrary
+                            that I read the numbers this way, that I use English, that haikus are a 5-7-5 structure,
+                            that
+                            the
+                            digits 0 and 7 have two syllables instead of 1 (like every other digit).</p>
+                        <p>I'll leave with this text conversation:</p>
+
+                        <div class="image-container">
+                            <a target="_blank" href="text-msg.jpeg">
+                                <img src="text-msg.jpeg"
+                                    alt="Text message conversation with 13104018008 (a haiku phone number)."></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div hidden=true id="plotter-scanner" class="container">
+                <div class="content">
+
+                    <h2>plotter-scanner</h2>
+                    <div class="font2">
+                        <p>My thesis show at Princeton was making a so-called plotter-scanner: basically modifying a
+                            document scanner
+                            to make it the size of a bed. Here's the description of that work when it was
+                            shown again at Princeton as a part of a symposium on photography, curated by Deana Lawson
+                            and
+                            Michael Famighetti:</p>
+                        <p>
+                        <p class="font1">Custom plotter, document scanner, acrylic, steel. March 2024</p>
+                        <p class="font1">The plotter-scanner is an interactive sculpture which combines a document
+                            scanner
+                            and custom-built 8’x8’ plotter to create a bed-sized scanner, first displayed at Princeton
+                            University in collaboration with Petr Karpov. The plotter-scanner combines the naïveté of an
+                            inevitable idea (make it big) with the psychology of a sophomoric butt-scan (succès de
+                            scandale)
+                            to create a tool of simultaneous surveillance and witness (how does your mattress see you?).
+                            The
+                            plotter-scanner allows you to press against the glass, to be suspended as an image in void,
+                            to
+                            circulate digitally, and to fix this moment in a scanline exposure.</p>
+                        <p>The plotter-scanner looks like this:</p>
+                        <div class="image-container">
+                            <a target="_blank" href="plotter-scanner.jpeg">
+                                <img src="plotter-scanner.jpeg" alt="Image of the plotter-scanner."></a>
+                        </div>
+                        <p>And it produces ridiculously large format images, like these (of me):
+                        <div class="carousel" id="carousel">
+                            <div class="carousel-images" id="carouselImages">
+                                <img src="https://d2w9rnfcy7mm78.cloudfront.net/30445816/original_88123cd027a316bd4ecb3400e743490f.png?1725472468?bc=0"
+                                    alt="plotter-scanner image 1">
+                                <img src="https://d2w9rnfcy7mm78.cloudfront.net/30445815/original_f61d02d462b29530c8a3000e74acdf19.png?1725472468?bc=0"
+                                    alt="plotter-scanner image 2">
+                                <img src="https://d2w9rnfcy7mm78.cloudfront.net/30445782/original_5d43a92db22e9ebfb8b691a8035764d2.png?1725472453?bc=0"
+                                    alt="plotter-scanner image 3">
+                                <img src="https://d2w9rnfcy7mm78.cloudfront.net/30115239/original_7cc0de8f3adec9b271b3b0dcd37678f2.png?1724169128?bc=0"
+                                    alt="plotter-scanner image 4">
+                                <img src="https://d2w9rnfcy7mm78.cloudfront.net/30115243/original_916be5ab5df7e4509e796267c84532dc.png?1724169130?bc=0"
+                                    alt="plotter-scanner image 5">
+                            </div>
+                            <div class="carousel-buttons">
+                                <button onclick="prevSlide()">&#10094;</button> <!-- Left Button (<) -->
+                                <button onclick="nextSlide()">&#10095;</button> <!-- Right Button (>) -->
+                            </div>
+                        </div>
+                        <p> See more images on my <a target="_blank"
+                                href="https://www.are.na/luke-shannon/plotter-scanner">are.na[↗]</a>.</p>
+                        <p></p>
+                        <p>I also used it to make a number of video animations, like this one of my friend Petr sleeping
+                            on
+                            the scanner overnight.</p>
+                        <div class="image-container">
+                            <video controls
+                                src="https://attachments.are.na/30149150/cae5a60762403b31ab9dc5e7a25d6fa7.mov?1724277379"
+                                alt="Video from the plotter-scanner: Petr sleeping in a stop-motion animation."
+                                width=300px></video>
+                        </div>
+
+                        <p>The scanner, as it currently exists, is a large interactive and sculptural image-making
+                            device.
+                            It's available to be installed on the floor, but I also recently converted it to a more
+                            portable,
+                            wall-mounted format for display in the <a
+                                href="https://rhizome.org/events/super-ultimate-internet-day/" target="_blank">Rhizome
+                                2024 super ultimate internet day</a>. I
+                            also have a large series of high quality prints at 7.5in×11in and
+                            life-size
+                            4ft×6ft.</p>
+                        <p>Currently, I am (excitedly) working on a ~3 minute generative animation combining these
+                            scans in a
+                            daily cycle, following a single character through a generative day in an infinite,
+                            non-repeating
+                            loop.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div hidden=true id="ceramics" class="container">
+                <div class="content">
+
+                    <h2>Marfa Ceramics Prototypes</h2>
+                    <div class="font2">
+                        <p>In 2022, I was the first (beta) resident at <a target="_blank"
+                                href="https://www.artblocks.io/marketplace/studio/apply/residency">Art Blocks Marfa</a>.
+                            During that time, and made an algorithm for 3D printed ceramics inspired by the desert,
+                            called
+                            Vertebrae. These works are prototypes for a potentially forthcoming work, which I have
+                            photographed and described
+                            more extensively in a full catalog available via email.
+                    </div>
+                </div>
+            </div>
+
+            <div hidden=true id="youtube-thumbnails" class="container">
+                <div class="content">
+
+                    <h2>youtube-thumbnails</h2>
+                    <div class="font2">
+                        <p>
+                            Sometimes I search on YouTube for a random few characters--"adc" or "ie4" or "bhlu". I do
+                            this
+                            partially because I'm bored, partially because I want to try and find a video that feels
+                            random
+                            (and
+                            private, with low views), and partially because I am amazed by the number of acronyms and
+                            abbreviations which carry real meaning for a subset of people I have never interacted with
+                            otherwise. In the cases above, they refer to a <a target="_blank"
+                                href="https://www.youtube.com/watch?v=lho0imy3mHE&ab_channel=enryu">role for players in
+                                video games[↗]</a>, a
+                            specific <a target="_blank"
+                                href="https://www.youtube.com/watch?v=EcfkQ8A580k&ab_channel=CGIndustrialDivision">type
+                                of
+                                motor[↗]</a>, and a <a target="_blank"
+                                href="https://www.youtube.com/watch?v=RXCsTlxOyVI&ab_channel=SamBHLU">musician from
+                                France[↗]</a>. These video results depend on the time you search (more recent videos are
+                            more
+                            likely to surface), and also the account you are searching from (based on previous search,
+                            your
+                            location / language, etc). This is fascinating and troubling to me.
+                        </p>
+                        <p>
+                            <em>Youtube Thumbnails</em> shows the first result from YouTube every combination of two
+                            letters, in a single grid. (So the first row is 'aa', 'ab', 'ac', etc and the first column
+                            is
+                            'aa',
+                            'ba' 'ca', etc.)
+                        </p>
+                        <div class="image-container">
+                            <!-- <a target="_blank" href="youtube-thumbnails.jpeg"> -->
+                            <img src="youtube-thumbnails-thumbnail.jpeg"
+                                alt="Image showing the first result from YouTube every combination of two
+                            letters, in a single grid (so the first row is 'aa', 'ab', 'ac'... and the first column is 'aa', 'ba' 'ca'...)">
+                            <!-- </a> -->
+                        </div>
+                        <p>I see this as a catalog on thumbnail design (which I love), monitor for current events, and
+                            an
+                            anatomical plane for different subspaces and echo chambers online. If you examine the
+                            thumbnails, you can often just work out the search made (or go from the search to the
+                            image). I
+                            am working on making this
+                            an installation and maybe website which updates the thumbnails in real-time, so you can see
+                            exactly the moment when, for example, "kh" goes back from Kamala Harris to Kingdom Hearts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div hidden="true" id="commission" class="container">
+                <div class="content">
+
+                    <h2>Commissions</h2>
+                    <div class=" font2">
+                        These are my works-in-progress that are complete or closest-to-complete. But I have a number of
+                        other ideas I'm currently working on, and--as a strong believer in constraints causing
+                        creativity--I'm open to other commissions.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script>
+        // This script ensures that clicking on a link only scrolls the correct panel.
+        document.querySelector('nav').addEventListener('click', function (e) {
+            console.log(e)
+            if (e.target.tagName.toLowerCase() === 'a') {
+                const targetId = e.target.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Check which panel contains the target
+                        const leftPanel = document.getElementById('left-panel');
+                        const rightPanel = document.getElementById('right-panel');
+
+                        // Stop default behavior
+                        e.preventDefault();
+
+                        if (leftPanel.contains(targetElement)) {
+                            leftPanel.scrollTo({
+                                top: targetElement.offsetTop,
+                                behavior: 'smooth'
+                            });
+                        } else if (rightPanel.contains(targetElement)) {
+                            rightPanel.scrollTo({
+                                top: targetElement.offsetTop,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                }
+            }
+        });
+    </script> -->
+    <script>
+        const has = new URLSearchParams(window.location.search).get('has');
+        if (has) {
+            const ids = has.split(',');
+            ids.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    if (element.hasAttribute('hidden')) {
+                        element.removeAttribute('hidden');
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
