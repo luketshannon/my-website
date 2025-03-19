@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Start</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="startButton">Start</button>
+    <script>
+        // Set the url params to ?slug=${YOUR_CHANNEL_SLUG}
+        // Try running once, likely it will be blocked from opening tabs via permissions.
+        // Allow this page to always open new tabs / pop ups, and try again.
+
+        let pages = []; // will store the blocks from the Are.na channel
+        let currentIndex = 0;
+        const urlParams = new URLSearchParams(window.location.search);
+        const channelSlug = urlParams.get('slug')
+
+        function openNextPage() {
+            if (currentIndex >= pages.length) {
+                console.log("All blocks have been processed.");
+                return;
+            }
+            const block = pages[currentIndex];
+
+            // If the block has a 'source', assume it's a link or website.
+            if (block.class == "Image" || block.class == "Attachment" || block.class == "Link") {
+                let newTab;
+                if (block.source) {
+                    newTab = window.open(block.source.url, "_blank");
+                } else if (block.attachment) {
+                    // Check if the attachment is a video (you may need to add a condition based on file extension or metadata)
+                    if (block.attachment.file_name.endsWith(".mp4") || block.attachment.file_name.endsWith(".mov") /* add other video extensions if needed */) {
+                        // Create a new tab with an embedded video player
+                        const newTab = window.open("", "_blank");
+                        if (newTab) {
+                            newTab.document.write(`
+                            <html>
+                            <head>
+                            <title>Video Player</title>
+                            </head>
+                            <body style="margin:0; display:flex; align-items:center; justify-content:center; height:100vh;">
+                            <video controls autoplay style="max-width:100%; max-height:100%;">
+                                <source src="${block.attachment.url}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            </body>
+                            </html>
+                        `);
+                            newTab.document.close();
+                        } else {
+                            console.warn("Popup blocked or focus could not be transferred.");
+                        }
+                    } else {
+                        // Default behavior for non-video attachments
+                        newTab = window.open(block.attachment.url, "_blank");
+                        if (newTab) {
+                            newTab.focus();
+                        }
+                    }
+                } else {
+                    newTab = window.open(block.image.original.url, "_blank");
+                }
+                if (newTab) {
+                    newTab.focus();
+                } else {
+                    console.warn("Popup blocked or focus could not be transferred for " + block.source);
+                }
+            } else if (block.class == "Attachment") {
+
+            }
+            // For text blocks, open a new tab and write the text content.
+            else if (block.class === "Text" && block.content) {
+                const newTab = window.open("", "_blank");
+                if (newTab) {
+                    const title = block.title || "Text Block";
+                    newTab.document.write(
+                        `<html>
+                        <head>
+                            <title>${title}</title>
+                            <style>
+                                body {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    min-height: 100vh;
+                                    margin: 0;
+                                    padding: 1em;
+                                    box-sizing: border-box;
+                                    overflow-y: auto;
+                                }
+                                .box {
+                                    border: 1px solid black;
+                                    padding: 0 1em 0 1em;
+                                    max-width: 800px;
+                                    width: 100%;
+                                    word-wrap: break-word;
+                                    margin: auto;
+                                }
+                            </style>
+                        </head>
+                        <body>
+                            <div class="box">
+                                ${block.content_html}
+                            </div>
+                        </body>
+                    </html>`
+                    );
+                    newTab.document.close();
+                    newTab.focus();
+                }
+
+            } else {
+                console.warn("Block type not supported or missing required fields:", block);
+            }
+
+            currentIndex++;
+            // Schedule the next block to open after 250 milliseconds.
+            setTimeout(openNextPage, 250);
+        }
+
+        // On every click, reset and fetch the channel blocks from Are.na.
+        document.getElementById('startButton').addEventListener('click', function () {
+            currentIndex = 0;
+            fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    pages = data.contents;  // data.blocks should be an array of block objects.
+                    pages.reverse()
+                    openNextPage();
+                })
+                .catch(error => console.error("Error fetching channel:", error));
+        });
+    </script>
+</body>
+
+</html>
